@@ -1,0 +1,37 @@
+# .sqlfluff configuration file
+[sqlfluff]
+# Define the dialect you're using (e.g., tsql for T-SQL, postgres for PostgreSQL, etc.)
+dialect = tsql
+
+# Define the rules to include or exclude
+# Exclude a rule: L003 (single line statements should end with a semicolon)
+exclude_rules = L003
+
+# Set the indentation for statements (in spaces)
+indent_unit = 4
+
+# The templater setting allows SQLFluff to work with different templating engines (Jinja, dbt, etc.)
+templater = jinja
+
+# Configure rules
+[sqlfluff:rules]
+# Enable/disable specific rules (use exclude_rules for disabling)
+max_line_length = 120  # Customize the max length of each line
+
+# Trailing commas rule (L019): commas should be trailing at the end of lines
+[sqlfluff:rules:L019]
+comma_style = trailing
+
+# Rule to ensure consistent casing for keywords (L010)
+[sqlfluff:rules:L010]
+capitalisation_policy = upper
+
+# Rule to ensure indentation (L003): Align by opening brackets
+[sqlfluff:rules:L003]
+indentation_policy = spaces
+
+# Specify file types and extensions for linting
+[sqlfluff:paths]
+# Only lint .sql files
+exclude = .*/migrations/.*  # Example: Exclude migrations folder
+
