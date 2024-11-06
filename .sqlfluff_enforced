@@ -1,0 +1,77 @@
+[sqlfluff]
+# Define the dialect for T-SQL (Transact-SQL)
+dialect = tsql
+
+# Specify which SQLFluff rules should be enabled or disabled
+# The default rules are enabled unless specified otherwise.
+
+[sqlfluff:rules]
+# Capitalization of keywords (SQL keywords in uppercase)
+L010 = enforce
+
+# Naming conventions (PascalCase for table names, column names)
+L014 = enforce # Unquoted identifiers should be in PascalCase
+L034 = enforce # Avoid wildcard select (SELECT *)
+
+# Avoid C-style comments (`/*`...`*/`), use `--`
+L016 = enforce
+
+# Consistent indentation
+L003 = tab_space_size = 4 # Indent with 4 spaces
+L003 = indent_unit = space
+
+# Avoid long lines (e.g., more than 80 characters per line)
+L009 = max_line_length = 80
+
+# JOIN clauses should be fully qualified
+L036 = enforce
+
+# Select columns rather than using wildcard (*)
+L027 = enforce
+
+# Require `AS` for column aliases
+L011 = enforce
+
+# Require consistent use of single quotes for string literals
+L006 = enforce
+
+# Require WHERE clauses in DELETE statements (to avoid deleting all rows)
+L028 = enforce
+
+# Nested queries should be indented
+L019 = enforce
+
+# No function calls in WHERE clauses that make the query non-SARGable
+L050 = enforce
+
+# No unqualified JOINs, always specify INNER, LEFT, etc.
+L021 = enforce
+
+# No implicit column aliasing
+L011 = enforce
+
+# SET NOCOUNT ON enforcement
+L051 = enforce
+
+# Naming convention for stored procedures, using `sp` prefix
+L034 = ignore  # You can customize this rule or add additional rules for specific naming conventions
+
+# Commenting standards (block comments should not be used)
+L025 = enforce  # Inline comments should be used for explanations, block comments can be avoided
+
+# Enforce transaction safety (usage of transactions, BEGIN TRY/END TRY, CATCH)
+L052 = enforce
+
+# Use appropriate data types
+L053 = enforce
+
+# No redundant subqueries
+L055 = enforce
+
+[sqlfluff:indentation]
+# Customize indentation rules (optional)
+indented_joins = True  # Align JOINs with indentation
+
+[sqlfluff:layout]
+# Adjust layout preferences
+leading_newlines = False  # Keep inline queries without newlines between major sections
