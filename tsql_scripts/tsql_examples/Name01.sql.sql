@@ -4,7 +4,7 @@ tbl1 is not descriptive. A better name would be Customers or Orders.
 id, nm, and dt are not descriptive. Better names would be CustomerID, Name, and OrderDate.
 sp1 is not descriptive. A better name would be GetAllCustomers or GetAllOrders.
 
-/*
+*/
 
 
 -- Poorly named table

@@ -1,0 +1,11 @@
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.dacpac
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/SQLDevProj.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/SQLDevProj.sourcelink.json
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/Model.xml
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/refactor.xml
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/postdeploy.sql
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/predeploy.sql
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/SQLDevProj.dll
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/Debug/SQLDevProj.pdb
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.dll
+/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.pdb

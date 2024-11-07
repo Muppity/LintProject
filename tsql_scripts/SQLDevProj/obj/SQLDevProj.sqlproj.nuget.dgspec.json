@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/SQLDevProj.sqlproj": {}
+  },
+  "projects": {
+    "/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/SQLDevProj.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/SQLDevProj.sqlproj",
+        "projectName": "SQLDevProj",
+        "projectPath": "/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/SQLDevProj.sqlproj",
+        "packagesPath": "/Users/carloslopez/.nuget/packages/",
+        "outputPath": "/Users/carloslopez/LintProject/tsql_scripts/SQLDevProj/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/carloslopez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
