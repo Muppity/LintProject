@@ -1,0 +1,46 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# File: azure-pipelines.yml
+
+trigger:
+  branches:
+    include:
+      - main  
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  sqlServerName: 'socmecha44'
+  sqlDatabaseName: 'sql_tests1'
+  sqlAdminUsername: 'clopez'
+  sqlAdminPassword: '$(Clave01*)'  # Define this as a secret variable in Azure DevOps pipeline settings
+
+stages:
+  - stage: DeployDatabase
+    displayName: "Deploy SQL Database"
+    jobs:
+      - job: DeploySQL
+        displayName: "Deploy Database Schema"
+        steps:
+          # Step 1: Install SQLPackage
+          - task: UseDotNet@2
+            displayName: 'Install .NET Core SDK'
+            inputs:
+              packageType: 'sdk'
+              version: '3.x'
+
+          - script: |
+              mkdir $(Agent.ToolsDirectory)/sqlpackage
+              curl -L https://aka.ms/sqlpackage-linux -o sqlpackage.zip
+              unzip -d $(Agent.ToolsDirectory)/sqlpackage sqlpackage.zip
+              rm sqlpackage.zip
+            displayName: 'Download SQLPackage'
+
+          # Step 2: Deploy DACPAC
+          - script: |
+              $(Agent.ToolsDirectory)/sqlpackage/sqlpackage /Action:Publish /SourceFile:tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.dacpac /TargetServerName:$(sqlServerName) /TargetDatabaseName:$(sqlDatabaseName) /TargetUser:$(sqlAdminUsername) /TargetPassword:$(sqlAdminPassword) /Properties:DropObjectsNotInSource=true
+            displayName: 'Deploy Database DACPAC'
