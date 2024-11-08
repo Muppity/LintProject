@@ -42,5 +42,5 @@ stages:
 
           # Step 2: Deploy DACPAC
           - script: |
-              $(Agent.ToolsDirectory)/sqlpackage/sqlpackage /Action:Publish /SourceFile:tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.dacpac /TargetServerName:$(sqlServerName) /TargetDatabaseName:$(sqlDatabaseName) /TargetUser:$(sqlAdminUsername) /TargetPassword:$(sqlAdminPassword) /Properties:DropObjectsNotInSource=true
+              $(Agent.ToolsDirectory)/sqlpackage/sqlpackage /Action:Publish /SourceFile:./tsql_scripts/SQLDevProj/bin/Debug/SQLDevProj.dacpac /TargetServerName:$(sqlServerName) /TargetDatabaseName:$(sqlDatabaseName) /TargetUser:$(sqlAdminUsername) /TargetPassword:$(sqlAdminPassword) /Properties:DropObjectsNotInSource=true
             displayName: 'Deploy Database DACPAC'
