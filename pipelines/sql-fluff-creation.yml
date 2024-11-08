@@ -15,5 +15,5 @@ steps:
   displayName: 'Install SQLFluff'
 
 - script: |
-    sqlfluff lint ~/tsql_scripts/tsql_examples
+    sqlfluff lint tsql_scripts/tsql_examples
   displayName: 'Run SQLFluff'
