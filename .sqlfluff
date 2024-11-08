@@ -5,14 +5,14 @@ dialect = tsql
 
 # Define the rules to include or exclude
 # Exclude a rule: L003 (single line statements should end with a semicolon)
-exclude_rules = L003
+#exclude_rules = L003
 
 # L014 do not strip optional quotes arround column names
 # L034 do not reorder columns
 # L030 keep casing of e.g. TVF
 # L031 we want to use alias in Joins for sure
 # L042 keep subqueries hopefully the writer had a good reason
-exclude_rules = L014,L034,L030,L031,L042
+exclude_rules = L003,L014,L034,L030,L031,L042
 
 
 
@@ -25,20 +25,18 @@ templater = jinja
 # Configure rules
 [sqlfluff:rules]
 # Enable/disable specific rules (use exclude_rules for disabling)
-tab_space_size = 2
-max_line_length = 200
-comma_style = leading
-max_line_length = 200  # Customize the max length of each line
-
+#tab_space_size = 2
+#max_line_length = 200
 # Trailing commas rule (L019): commas should be trailing at the end of lines
-[sqlfluff:rules:L019]
-comma_style = trailing
-
+#[sqlfluff:rules:L019]
+#comma_style = trailing
+#comma_style = leading
 # Rule to ensure consistent casing for keywords (L010)
-[sqlfluff:rules:L010]
+
+#[sqlfluff:rules:L010]
 capitalisation_policy = upper
 
-[SQLFluff:rules:L011]
+#[SQLFluff:rules:L011]
 aliasing = implicit
 
 
