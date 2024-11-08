@@ -17,7 +17,7 @@ variables:
   sqlServerName: 'socmecha44'
   sqlDatabaseName: 'SQLDevProj'
   sqlAdminUsername: 'clopez'
-  sqlAdminPassword: '$(Clave01*)'  # Define this as a secret variable in Azure DevOps pipeline settings
+  sqlAdminPassword: 'Clave01*'  # Define this as a secret variable in Azure DevOps pipeline settings
 
 stages:
   - stage: DeployDatabase
