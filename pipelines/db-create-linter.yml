@@ -1,0 +1,18 @@
+name: Makefile CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup virtual env
+      run: make setup
+    - name: Activate virtual env
+      run: source ~/.sqlfluff/bin/activate
+    - name: Install dependencies
+      run: make install
+    - name: Lint sql files
+      run: make lint
